@@ -1,0 +1,570 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Pagamento confirmado - ZEUS TV">
+
+    <title>Pagamento Confirmado | ZEUS TV</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 20px;
+
+            font-family: "Inter", sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(246, 196, 83, 0.12),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(230, 168, 0, 0.08),
+                    transparent 35%
+                ),
+                #050505;
+
+            color: #ffffff;
+
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.012) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.012) 1px,
+                    transparent 1px
+                );
+
+            background-size: 60px 60px;
+
+            z-index: -1;
+        }
+
+        .page {
+            width: 100%;
+
+            max-width: 680px;
+
+            position: relative;
+        }
+
+        .glow {
+            position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background:
+                rgba(246, 196, 83, 0.08);
+
+            filter: blur(100px);
+
+            pointer-events: none;
+        }
+
+        .logo {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            margin-bottom: 30px;
+
+            font-size: 28px;
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
+        }
+
+        .logo-tv {
+            padding: 3px 9px;
+
+            border-radius: 7px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffe08a,
+                    #f6c453,
+                    #e6a800
+                );
+
+            color: #111111;
+
+            font-size: 16px;
+
+            box-shadow:
+                0 0 25px rgba(246, 196, 83, 0.35);
+        }
+
+        .card {
+            position: relative;
+
+            padding: 45px;
+
+            border-radius: 28px;
+
+            text-align: center;
+
+            border:
+                1px solid rgba(246, 196, 83, 0.18);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.055),
+                    rgba(255, 255, 255, 0.018)
+                );
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 35px 100px rgba(0, 0, 0, 0.5),
+                0 0 60px rgba(246, 196, 83, 0.06);
+        }
+
+        .success-icon {
+            width: 86px;
+            height: 86px;
+
+            margin:
+                0 auto
+                26px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(34, 197, 94, 0.10);
+
+            border:
+                1px solid rgba(34, 197, 94, 0.35);
+
+            color: #4ade80;
+
+            font-size: 42px;
+
+            box-shadow:
+                0 0 35px rgba(34, 197, 94, 0.12);
+        }
+
+        .status {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 7px 13px;
+
+            margin-bottom: 18px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(34, 197, 94, 0.08);
+
+            border:
+                1px solid rgba(34, 197, 94, 0.20);
+
+            color: #86efac;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            box-shadow:
+                0 0 12px #22c55e;
+        }
+
+        h1 {
+            margin-bottom: 18px;
+
+            font-size:
+                clamp(36px, 6vw, 52px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            font-weight: 900;
+        }
+
+        h1 span {
+            display: block;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff0b8,
+                    #f6c453,
+                    #e6a800
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .description {
+            max-width: 520px;
+
+            margin:
+                0 auto
+                30px;
+
+            color: #9ca3af;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+        .instructions {
+            margin-bottom: 30px;
+
+            padding: 20px;
+
+            border-radius: 16px;
+
+            text-align: left;
+
+            border:
+                1px solid rgba(255, 255, 255, 0.07);
+
+            background:
+                rgba(255, 255, 255, 0.025);
+        }
+
+        .instructions strong {
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: #f6c453;
+
+            font-size: 12px;
+
+            letter-spacing: 0.5px;
+        }
+
+        .instructions p {
+            color: #9ca3af;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+        .whatsapp-button {
+            width: 100%;
+
+            min-height: 58px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            padding: 16px 24px;
+
+            border-radius: 15px;
+
+            background: #22c55e;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 900;
+
+            letter-spacing: 0.4px;
+
+            box-shadow:
+                0 14px 35px rgba(34, 197, 94, 0.22);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 18px 45px rgba(34, 197, 94, 0.34);
+        }
+
+        .whatsapp-icon {
+            width: 33px;
+            height: 33px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.16);
+
+            font-size: 17px;
+        }
+
+        .notice {
+            margin-top: 17px;
+
+            color: #6b7280;
+
+            font-size: 10px;
+
+            line-height: 1.6;
+        }
+
+        .security {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            margin-top: 25px;
+
+            color: #555c69;
+
+            font-size: 10px;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 14px;
+            }
+
+            .card {
+                padding:
+                    35px
+                    22px;
+
+                border-radius: 22px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .success-icon {
+                width: 76px;
+                height: 76px;
+
+                font-size: 36px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .whatsapp-button {
+                font-size: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="page">
+
+        <div class="glow"></div>
+
+        <div class="logo">
+
+            <span>ZEUS</span>
+
+            <span class="logo-tv">
+                TV
+            </span>
+
+        </div>
+
+
+        <section class="card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                PAGAMENTO CONFIRMADO
+
+            </div>
+
+
+            <h1>
+
+                Compra realizada
+
+                <span>
+                    com sucesso!
+                </span>
+
+            </h1>
+
+
+            <p class="description">
+
+                Seu pagamento foi confirmado.
+
+                Agora falta apenas concluir a ativação
+                do seu acesso ZEUS TV.
+
+            </p>
+
+
+            <div class="instructions">
+
+                <strong>
+                    ÚLTIMO PASSO
+                </strong>
+
+                <p>
+
+                    Clique no botão abaixo para falar
+                    diretamente com nosso atendimento
+                    pelo WhatsApp.
+
+                    Envie a mensagem automática e nossa
+                    equipe continuará o processo de
+                    ativação do seu acesso.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://wa.me/5591993303430?text=Olá%2C%20acabei%20de%20realizar%20minha%20compra%20na%20ZEUS%20TV%20e%20quero%20ativar%20meu%20acesso."
+                class="whatsapp-button"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <span class="whatsapp-icon">
+                    ☎
+                </span>
+
+                ATIVAR MEU ACESSO NO WHATSAPP
+
+            </a>
+
+
+            <p class="notice">
+
+                Para facilitar seu atendimento,
+                tenha em mãos os dados utilizados
+                durante a compra.
+
+            </p>
+
+
+            <div class="security">
+
+                <span>🔒</span>
+
+                Compra finalizada com segurança
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
+```
