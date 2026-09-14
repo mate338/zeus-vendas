@@ -1,1101 +1,506 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="ZEUS TV - Entretenimento completo em um só lugar. Escolha seu plano e comece agora.">
-
+    <meta name="description" content="ZEUS TV - entretenimento, praticidade e uma experiência premium na sua tela.">
+    <meta name="theme-color" content="#070707">
     <title>ZEUS TV | Entretenimento sem limites</title>
 
-    <!-- Fonte Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="page-noise" aria-hidden="true"></div>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-
-    <header class="header">
-
-        <div class="container header-container">
-
-            <a href="#inicio" class="logo">
-                <span class="logo-zeus">ZEUS</span>
-                <span class="logo-tv">TV</span>
+    <header class="header" id="topo">
+        <div class="container header-inner">
+            <a class="brand" href="#inicio" aria-label="ZEUS TV - início">
+                <span class="brand-word">ZEUS</span>
+                <span class="brand-tv">TV</span>
             </a>
 
-            <nav class="menu">
-
+            <nav class="desktop-nav" aria-label="Navegação principal">
                 <a href="#beneficios">Benefícios</a>
-
                 <a href="#como-funciona">Como funciona</a>
-
                 <a href="#planos">Planos</a>
-
-                <a href="#duvidas">Dúvidas</a>
-
+                <a href="#depoimentos">Avaliações</a>
+                <a href="#faq">FAQ</a>
             </nav>
 
-            <a href="#planos" class="btn-header">
-                ASSINAR AGORA
-            </a>
+            <a class="header-cta" href="#planos">ASSINAR AGORA</a>
 
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
         </div>
 
+        <div class="mobile-menu" aria-hidden="true">
+            <div class="container mobile-menu-inner">
+                <a href="#beneficios">Benefícios</a>
+                <a href="#como-funciona">Como funciona</a>
+                <a href="#planos">Planos</a>
+                <a href="#depoimentos">Avaliações</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
     </header>
 
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
     <main>
-
         <section class="hero" id="inicio">
+            <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
 
-            <div class="hero-glow hero-glow-1"></div>
-            <div class="hero-glow hero-glow-2"></div>
-
-            <div class="container hero-container">
-
-                <div class="hero-content">
-
-                    <div class="hero-badge">
-
-                        <span class="badge-dot"></span>
-
-                        ENTRETENIMENTO NA SUA TELA
-
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        EXPERIÊNCIA ZEUS
                     </div>
 
                     <h1>
-
-                        Todo o entretenimento que você gosta
-
-                        <span>em um só lugar.</span>
-
+                        Entretenimento com uma experiência
+                        <span class="gradient-text">à altura do seu tempo.</span>
                     </h1>
 
-                    <p class="hero-description">
-
-                        Tenha uma experiência moderna, rápida e prática para aproveitar
-                        seus conteúdos favoritos diretamente nos seus dispositivos.
-
+                    <p class="hero-lead">
+                        Uma interface moderna, acesso simples e suporte quando você precisar.
+                        Escolha seu plano e comece em poucos passos.
                     </p>
-
 
                     <div class="hero-actions">
-
-                        <a href="#planos" class="btn-primary">
-
+                        <a class="btn btn-gold" href="#planos">
                             QUERO COMEÇAR AGORA
-
-                            <span>→</span>
-
+                            <span aria-hidden="true">→</span>
                         </a>
-
-                        <a href="#como-funciona" class="btn-secondary">
-
-                            COMO FUNCIONA
-
-                        </a>
-
+                        <a class="btn btn-ghost" href="#como-funciona">COMO FUNCIONA</a>
                     </div>
 
-
-                    <div class="hero-features">
-
-                        <div class="hero-feature">
-                            <span>✓</span>
-                            Ativação rápida
+                    <div class="hero-proof">
+                        <div>
+                            <span class="proof-icon">✓</span>
+                            <span>Ativação rápida</span>
                         </div>
-
-                        <div class="hero-feature">
-                            <span>✓</span>
-                            Fácil de usar
+                        <div>
+                            <span class="proof-icon">✓</span>
+                            <span>Pagamento seguro</span>
                         </div>
-
-                        <div class="hero-feature">
-                            <span>✓</span>
-                            Suporte via WhatsApp
+                        <div>
+                            <span class="proof-icon">✓</span>
+                            <span>Suporte humanizado</span>
                         </div>
-
                     </div>
-
                 </div>
 
+                <div class="hero-showcase reveal">
+                    <div class="device-shadow" aria-hidden="true"></div>
 
-                <!-- MOCKUP DO APP -->
-
-                <div class="hero-visual">
-
-                    <div class="mockup-glow"></div>
-
-                    <div class="app-card">
-
-                        <div class="app-topbar">
-
-                            <div class="app-logo">
-                                ZEUS <span>TV</span>
+                    <div class="device">
+                        <div class="device-top">
+                            <div class="mini-brand">
+                                <span>ZEUS</span><b>TV</b>
                             </div>
-
-                            <div class="app-profile"></div>
-
+                            <div class="device-status">
+                                <span></span>
+                                ONLINE
+                            </div>
                         </div>
 
-
-                        <div class="app-banner">
-
-                            <div class="banner-content">
-
-                                <span>DESTAQUE</span>
-
-                                <h3>
-                                    Seu entretenimento.
-                                    Sua escolha.
-                                </h3>
-
-                                <div class="fake-button">
-                                    ▶ Assistir
-                                </div>
-
+                        <div class="device-feature">
+                            <div class="device-copy">
+                                <small>DESTAQUE</small>
+                                <h2>Seu entretenimento.<br>Sua escolha.</h2>
+                                <span class="watch-pill">▶ Explorar</span>
                             </div>
-
+                            <div class="bolt-mark" aria-hidden="true">ϟ</div>
                         </div>
 
+                        <div class="device-label">Explore por categoria</div>
 
-                        <div class="app-category-title">
-                            Categorias
+                        <div class="device-grid">
+                            <div class="device-tile">
+                                <span class="tile-icon">▶</span>
+                                <strong>TV</strong>
+                                <small>Ao vivo</small>
+                            </div>
+                            <div class="device-tile">
+                                <span class="tile-icon">★</span>
+                                <strong>Filmes</strong>
+                                <small>Escolha o seu</small>
+                            </div>
+                            <div class="device-tile">
+                                <span class="tile-icon">▣</span>
+                                <strong>Séries</strong>
+                                <small>Continue assistindo</small>
+                            </div>
+                            <div class="device-tile">
+                                <span class="tile-icon">ϟ</span>
+                                <strong>Destaques</strong>
+                                <small>Em alta</small>
+                            </div>
                         </div>
-
-
-                        <div class="app-grid">
-
-                            <div class="mini-card">
-                                <span>▶</span>
-                                <p>TV</p>
-                            </div>
-
-                            <div class="mini-card">
-                                <span>★</span>
-                                <p>Filmes</p>
-                            </div>
-
-                            <div class="mini-card">
-                                <span>▣</span>
-                                <p>Séries</p>
-                            </div>
-
-                            <div class="mini-card">
-                                <span>⚡</span>
-                                <p>Destaques</p>
-                            </div>
-
-                        </div>
-
                     </div>
 
-                </div>
+                    <div class="floating-card floating-card-top">
+                        <span>✓</span>
+                        <div>
+                            <strong>Experiência premium</strong>
+                            <small>Interface rápida e organizada</small>
+                        </div>
+                    </div>
 
+                    <div class="floating-card floating-card-bottom">
+                        <span class="gold-dot"></span>
+                        <div>
+                            <strong>ZEUS TV</strong>
+                            <small>Pronto para você</small>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-        </section>
-
-
-
-        <!-- =========================
-             NÚMEROS / CONFIANÇA
-        ========================== -->
-
-        <section class="stats">
-
-            <div class="container stats-container">
-
-                <div class="stat">
-
-                    <strong>01</strong>
-
-                    <span>Escolha seu plano</span>
-
+            <div class="container trust-strip reveal">
+                <div class="trust-item">
+                    <span class="trust-number">01</span>
+                    <div><strong>Escolha</strong><small>o plano ideal</small></div>
                 </div>
-
-
-                <div class="stat-divider"></div>
-
-
-                <div class="stat">
-
-                    <strong>02</strong>
-
-                    <span>Faça seu pagamento</span>
-
+                <div class="trust-separator"></div>
+                <div class="trust-item">
+                    <span class="trust-number">02</span>
+                    <div><strong>Finalize</strong><small>seu pagamento</small></div>
                 </div>
-
-
-                <div class="stat-divider"></div>
-
-
-                <div class="stat">
-
-                    <strong>03</strong>
-
-                    <span>Solicite sua ativação</span>
-
+                <div class="trust-separator"></div>
+                <div class="trust-item">
+                    <span class="trust-number">03</span>
+                    <div><strong>Ative</strong><small>seu acesso</small></div>
                 </div>
-
-
-                <div class="stat-divider"></div>
-
-
-                <div class="stat">
-
-                    <strong>04</strong>
-
-                    <span>Comece a aproveitar</span>
-
+                <div class="trust-separator"></div>
+                <div class="trust-item">
+                    <span class="trust-number">04</span>
+                    <div><strong>Aproveite</strong><small>a experiência ZEUS</small></div>
                 </div>
-
             </div>
-
         </section>
 
+        <section class="section benefits" id="beneficios">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker">POR QUE ZEUS?</span>
+                    <h2>Uma experiência pensada para ser <span class="gradient-text">simples e premium.</span></h2>
+                    <p>Do primeiro clique à ativação, tudo foi organizado para você ter praticidade e clareza.</p>
+                </div>
 
+                <div class="benefit-grid">
+                    <article class="premium-card reveal">
+                        <div class="card-icon">ϟ</div>
+                        <span class="card-index">01</span>
+                        <h3>Ativação rápida</h3>
+                        <p>Após a confirmação do pagamento, você segue para a etapa de ativação de forma simples.</p>
+                    </article>
 
-        <!-- =========================
-             BENEFÍCIOS
-        ========================== -->
+                    <article class="premium-card reveal">
+                        <div class="card-icon">▶</div>
+                        <span class="card-index">02</span>
+                        <h3>Interface intuitiva</h3>
+                        <p>Navegação limpa, moderna e organizada para encontrar o que procura sem complicação.</p>
+                    </article>
 
-        <section class="beneficios section" id="beneficios">
+                    <article class="premium-card reveal">
+                        <div class="card-icon">▣</div>
+                        <span class="card-index">03</span>
+                        <h3>Acesso prático</h3>
+                        <p>Uma experiência preparada para dispositivos compatíveis com o aplicativo ZEUS TV.</p>
+                    </article>
+
+                    <article class="premium-card reveal">
+                        <div class="card-icon">◉</div>
+                        <span class="card-index">04</span>
+                        <h3>Suporte humanizado</h3>
+                        <p>Após a compra, nossa equipe orienta você no processo de ativação e utilização do acesso.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section process-section" id="como-funciona">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker">COMO FUNCIONA</span>
+                    <h2>Do pagamento à ativação em <span class="gradient-text">3 passos.</span></h2>
+                </div>
+
+                <div class="process-grid">
+                    <article class="process-card reveal">
+                        <span class="process-number">01</span>
+                        <div class="process-icon">⌁</div>
+                        <h3>Escolha seu plano</h3>
+                        <p>Compare as opções e escolha o período que melhor combina com você.</p>
+                    </article>
+
+                    <div class="process-line" aria-hidden="true"></div>
+
+                    <article class="process-card reveal">
+                        <span class="process-number">02</span>
+                        <div class="process-icon">◇</div>
+                        <h3>Finalize a compra</h3>
+                        <p>Você será direcionado para o ambiente seguro de pagamento da Cakto.</p>
+                    </article>
+
+                    <div class="process-line" aria-hidden="true"></div>
+
+                    <article class="process-card reveal">
+                        <span class="process-number">03</span>
+                        <div class="process-icon">✓</div>
+                        <h3>Conclua a ativação</h3>
+                        <p>Com o pagamento aprovado, siga as instruções da página de confirmação.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section plans-section" id="planos">
+            <div class="plan-orb" aria-hidden="true"></div>
 
             <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        POR QUE ESCOLHER A ZEUS?
-                    </span>
-
-                    <h2>
-                        Uma experiência feita para
-                        <span>ser simples.</span>
-                    </h2>
-
-                    <p>
-                        Tudo pensado para você acessar seus conteúdos com praticidade
-                        e contar com suporte quando precisar.
-                    </p>
-
+                <div class="section-heading reveal">
+                    <span class="section-kicker">PLANOS ZEUS</span>
+                    <h2>Escolha o seu plano e <span class="gradient-text">comece agora.</span></h2>
+                    <p>Pagamento processado em ambiente seguro. Selecione uma opção para continuar.</p>
                 </div>
-
-
-                <div class="beneficios-grid">
-
-
-                    <article class="beneficio-card">
-
-                        <div class="beneficio-icon">
-                            ⚡
-                        </div>
-
-                        <h3>
-                            Ativação rápida
-                        </h3>
-
-                        <p>
-                            Após a confirmação do pagamento, fale com nosso atendimento
-                            para solicitar sua ativação.
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="beneficio-card">
-
-                        <div class="beneficio-icon">
-                            ▶
-                        </div>
-
-                        <h3>
-                            Interface intuitiva
-                        </h3>
-
-                        <p>
-                            Navegação organizada para você encontrar o que procura
-                            de maneira simples e rápida.
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="beneficio-card">
-
-                        <div class="beneficio-icon">
-                            📱
-                        </div>
-
-                        <h3>
-                            Acesso prático
-                        </h3>
-
-                        <p>
-                            Tenha uma experiência confortável em dispositivos
-                            compatíveis com o aplicativo.
-                        </p>
-
-                    </article>
-
-
-
-                    <article class="beneficio-card">
-
-                        <div class="beneficio-icon">
-                            💬
-                        </div>
-
-                        <h3>
-                            Suporte humanizado
-                        </h3>
-
-                        <p>
-                            Precisou de ajuda? Nosso atendimento pelo WhatsApp
-                            está pronto para orientar você.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             COMO FUNCIONA
-        ========================== -->
-
-        <section class="como-funciona section" id="como-funciona">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        É MUITO FÁCIL
-                    </span>
-
-                    <h2>
-                        Comece em apenas
-                        <span>3 passos.</span>
-                    </h2>
-
-                </div>
-
-
-                <div class="steps">
-
-
-                    <div class="step-card">
-
-                        <div class="step-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Escolha seu plano
-                        </h3>
-
-                        <p>
-                            Escolha abaixo a opção que melhor combina com você.
-                        </p>
-
-                    </div>
-
-
-                    <div class="step-line"></div>
-
-
-                    <div class="step-card">
-
-                        <div class="step-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Finalize a compra
-                        </h3>
-
-                        <p>
-                            Você será direcionado para uma página segura de pagamento.
-                        </p>
-
-                    </div>
-
-
-                    <div class="step-line"></div>
-
-
-                    <div class="step-card">
-
-                        <div class="step-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Ative seu acesso
-                        </h3>
-
-                        <p>
-                            Após a compra, fale conosco pelo WhatsApp para concluir
-                            sua ativação.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             PLANOS
-        ========================== -->
-
-        <section class="planos section" id="planos">
-
-            <div class="plans-glow"></div>
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        ESCOLHA SEU PLANO
-                    </span>
-
-                    <h2>
-                        Escolha quanto tempo você
-                        <span>quer aproveitar.</span>
-                    </h2>
-
-                    <p>
-                        Selecione uma das opções abaixo para continuar.
-                    </p>
-
-                </div>
-
 
                 <div class="plans-grid">
-
-
-                    <!-- PLANO 1 MÊS -->
-
-                    <article class="plan-card">
-
-                        <div class="plan-name">
-                            MENSAL
+                    <article class="plan-card reveal">
+                        <div class="plan-header">
+                            <span class="plan-label">MENSAL</span>
+                            <span class="plan-time">1 mês</span>
                         </div>
 
-                        <div class="plan-period">
-                            1 mês
+                        <div class="price">
+                            <span class="price-currency">R$</span>
+                            <strong>29</strong>
+                            <span class="price-cents">,90</span>
                         </div>
 
-                        <div class="plan-price">
-
-                            <span class="currency">
-                                R$
-                            </span>
-
-                            <strong>
-                                29
-                            </strong>
-
-                            <span class="cents">
-                                ,90
-                            </span>
-
-                        </div>
+                        <p class="plan-note">Ideal para começar</p>
 
                         <div class="plan-divider"></div>
 
-
-                        <ul class="plan-benefits">
-
-                            <li>
-                                <span>✓</span>
-                                Acesso por 1 mês
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Suporte via WhatsApp
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Ativação rápida
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Experiência ZEUS TV
-                            </li>
-
+                        <ul class="plan-list">
+                            <li><span>✓</span>Acesso por 1 mês</li>
+                            <li><span>✓</span>Ativação após confirmação</li>
+                            <li><span>✓</span>Suporte de atendimento</li>
+                            <li><span>✓</span>Experiência ZEUS TV</li>
                         </ul>
 
-
-                        <!-- TROCAR PELO LINK DO CHECKOUT -->
-
-                        <a
-                            href="#"
-                            class="btn-plan checkout-link"
-                            data-plan="mensal">
-
+                        <a class="plan-button" href="https://pay.cakto.com.br/jwyi27m_714880">
                             ASSINAR 1 MÊS
-
+                            <span>→</span>
                         </a>
-
                     </article>
 
+                    <article class="plan-card featured reveal">
+                        <div class="popular-badge">MAIS ESCOLHIDO</div>
 
-
-                    <!-- PLANO 2 MESES -->
-
-                    <article class="plan-card plan-featured">
-
-                        <div class="popular-badge">
-                            MAIS ESCOLHIDO
+                        <div class="plan-header">
+                            <span class="plan-label">BIMESTRAL</span>
+                            <span class="plan-time">2 meses</span>
                         </div>
 
-                        <div class="plan-name">
-                            BIMESTRAL
+                        <div class="price">
+                            <span class="price-currency">R$</span>
+                            <strong>49</strong>
+                            <span class="price-cents">,90</span>
                         </div>
 
-                        <div class="plan-period">
-                            2 meses
-                        </div>
-
-                        <div class="plan-price">
-
-                            <span class="currency">
-                                R$
-                            </span>
-
-                            <strong>
-                                49
-                            </strong>
-
-                            <span class="cents">
-                                ,90
-                            </span>
-
-                        </div>
-
-                        <div class="plan-saving">
-                            Melhor custo-benefício
-                        </div>
+                        <p class="plan-note">Melhor custo-benefício</p>
 
                         <div class="plan-divider"></div>
 
-
-                        <ul class="plan-benefits">
-
-                            <li>
-                                <span>✓</span>
-                                Acesso por 2 meses
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Suporte via WhatsApp
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Ativação rápida
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Experiência ZEUS TV
-                            </li>
-
+                        <ul class="plan-list">
+                            <li><span>✓</span>Acesso por 2 meses</li>
+                            <li><span>✓</span>Ativação após confirmação</li>
+                            <li><span>✓</span>Suporte de atendimento</li>
+                            <li><span>✓</span>Experiência ZEUS TV</li>
                         </ul>
 
-
-                        <!-- TROCAR PELO LINK DO CHECKOUT -->
-
-                        <a
-                            href="#"
-                            class="btn-plan btn-plan-featured checkout-link"
-                            data-plan="bimestral">
-
+                        <a class="plan-button plan-button-gold" href="https://pay.cakto.com.br/3jxp7vp">
                             ASSINAR 2 MESES
-
+                            <span>→</span>
                         </a>
-
                     </article>
 
-
-
-                    <!-- PLANO 3 MESES -->
-
-                    <article class="plan-card">
-
-                        <div class="plan-name">
-                            TRIMESTRAL
+                    <article class="plan-card reveal">
+                        <div class="plan-header">
+                            <span class="plan-label">TRIMESTRAL</span>
+                            <span class="plan-time">3 meses</span>
                         </div>
 
-                        <div class="plan-period">
-                            3 meses
+                        <div class="price">
+                            <span class="price-currency">R$</span>
+                            <strong>69</strong>
+                            <span class="price-cents">,90</span>
                         </div>
 
-                        <div class="plan-price">
-
-                            <span class="currency">
-                                R$
-                            </span>
-
-                            <strong>
-                                69
-                            </strong>
-
-                            <span class="cents">
-                                ,90
-                            </span>
-
-                        </div>
-
-                        <div class="plan-saving">
-                            Mais tempo, mais economia
-                        </div>
+                        <p class="plan-note">Mais tempo com você</p>
 
                         <div class="plan-divider"></div>
 
-
-                        <ul class="plan-benefits">
-
-                            <li>
-                                <span>✓</span>
-                                Acesso por 3 meses
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Suporte via WhatsApp
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Ativação rápida
-                            </li>
-
-                            <li>
-                                <span>✓</span>
-                                Experiência ZEUS TV
-                            </li>
-
+                        <ul class="plan-list">
+                            <li><span>✓</span>Acesso por 3 meses</li>
+                            <li><span>✓</span>Ativação após confirmação</li>
+                            <li><span>✓</span>Suporte de atendimento</li>
+                            <li><span>✓</span>Experiência ZEUS TV</li>
                         </ul>
 
-
-                        <!-- TROCAR PELO LINK DO CHECKOUT -->
-
-                        <a
-                            href="#"
-                            class="btn-plan checkout-link"
-                            data-plan="trimestral">
-
+                        <a class="plan-button" href="https://pay.cakto.com.br/b5e8edp">
                             ASSINAR 3 MESES
-
+                            <span>→</span>
                         </a>
-
                     </article>
-
                 </div>
 
-
-                <div class="payment-security">
-
+                <div class="payment-trust reveal">
                     <span>🔒</span>
-
-                    Pagamento processado em ambiente seguro
-
+                    Pagamento processado em ambiente seguro pela Cakto
                 </div>
-
             </div>
-
         </section>
 
-
-
-        <!-- =========================
-             DEPOIMENTOS
-        ========================== -->
-
-        <section class="depoimentos section">
-
+        <section class="section testimonials" id="depoimentos">
             <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        EXPERIÊNCIA DOS CLIENTES
-                    </span>
-
-                    <h2>
-                        Quem conhece,
-                        <span>recomenda.</span>
-                    </h2>
-
+                <div class="section-heading reveal">
+                    <span class="section-kicker">EXPERIÊNCIA DOS CLIENTES</span>
+                    <h2>Quem usa, percebe a <span class="gradient-text">diferença.</span></h2>
                 </div>
 
-
-                <div class="testimonials-grid">
-
-
-                    <article class="testimonial-card">
-
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-
-                        <p>
-                            “Gostei bastante da organização e o atendimento foi
-                            muito rápido. Fácil de usar.”
-                        </p>
-
+                <div class="testimonial-grid">
+                    <article class="testimonial-card reveal">
+                        <div class="quote-mark">“</div>
+                        <div class="stars">★★★★★</div>
+                        <p>Gostei bastante da organização e o atendimento foi muito rápido. Fácil de usar.</p>
                         <div class="client">
-
-                            <div class="client-avatar">
-                                M
-                            </div>
-
-                            <div>
-                                <strong>Marcos</strong>
-                                <span>Cliente ZEUS</span>
-                            </div>
-
+                            <span class="avatar">M</span>
+                            <div><strong>Marcos</strong><small>Cliente ZEUS</small></div>
                         </div>
-
                     </article>
 
-
-                    <article class="testimonial-card">
-
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-
-                        <p>
-                            “O processo foi simples e quando precisei de ajuda
-                            fui atendida pelo WhatsApp.”
-                        </p>
-
+                    <article class="testimonial-card reveal">
+                        <div class="quote-mark">“</div>
+                        <div class="stars">★★★★★</div>
+                        <p>O processo foi simples e quando precisei de ajuda fui atendida rapidamente.</p>
                         <div class="client">
-
-                            <div class="client-avatar">
-                                A
-                            </div>
-
-                            <div>
-                                <strong>Ana</strong>
-                                <span>Cliente ZEUS</span>
-                            </div>
-
+                            <span class="avatar">A</span>
+                            <div><strong>Ana</strong><small>Cliente ZEUS</small></div>
                         </div>
-
                     </article>
 
-
-                    <article class="testimonial-card">
-
-                        <div class="stars">
-                            ★★★★★
-                        </div>
-
-                        <p>
-                            “Interface muito bonita e prática. Estou gostando
-                            bastante da experiência.”
-                        </p>
-
+                    <article class="testimonial-card reveal">
+                        <div class="quote-mark">“</div>
+                        <div class="stars">★★★★★</div>
+                        <p>Interface bonita, prática e organizada. Estou gostando bastante da experiência.</p>
                         <div class="client">
-
-                            <div class="client-avatar">
-                                R
-                            </div>
-
-                            <div>
-                                <strong>Rafael</strong>
-                                <span>Cliente ZEUS</span>
-                            </div>
-
+                            <span class="avatar">R</span>
+                            <div><strong>Rafael</strong><small>Cliente ZEUS</small></div>
                         </div>
-
                     </article>
-
                 </div>
-
             </div>
-
         </section>
 
-
-
-        <!-- =========================
-             FAQ
-        ========================== -->
-
-        <section class="faq section" id="duvidas">
-
-            <div class="container faq-container">
-
-                <div class="faq-intro">
-
-                    <span class="section-label">
-                        DÚVIDAS FREQUENTES
-                    </span>
-
-                    <h2>
-                        Ficou com alguma
-                        <span>dúvida?</span>
-                    </h2>
-
-                    <p>
-                        Confira as respostas para as principais dúvidas antes
-                        de escolher seu plano.
-                    </p>
-
+        <section class="section faq-section" id="faq">
+            <div class="container faq-layout">
+                <div class="faq-copy reveal">
+                    <span class="section-kicker">DÚVIDAS FREQUENTES</span>
+                    <h2>Antes de assinar, tire suas <span class="gradient-text">dúvidas.</span></h2>
+                    <p>Reunimos as respostas mais importantes sobre compra, ativação e renovação.</p>
                 </div>
-
 
                 <div class="faq-list">
-
-
-                    <div class="faq-item">
-
-                        <button class="faq-question">
-
-                            Como funciona a ativação?
-
-                            <span>+</span>
-
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Como funciona a ativação?</span>
+                            <b>+</b>
                         </button>
-
                         <div class="faq-answer">
-
-                            <p>
-                                Após concluir sua compra, você será direcionado
-                                para nossa página de confirmação. Nela haverá
-                                um botão para falar diretamente com nosso
-                                atendimento pelo WhatsApp.
-                            </p>
-
+                            <p>Depois que o pagamento for aprovado, você será direcionado para a página de confirmação com as instruções para concluir sua ativação.</p>
                         </div>
+                    </article>
 
-                    </div>
-
-
-
-                    <div class="faq-item">
-
-                        <button class="faq-question">
-
-                            Quanto tempo demora para ativar?
-
-                            <span>+</span>
-
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Quanto tempo demora para ativar?</span>
+                            <b>+</b>
                         </button>
-
                         <div class="faq-answer">
-
-                            <p>
-                                Após a confirmação do pagamento, entre em contato
-                                com nosso atendimento para iniciar o processo
-                                de ativação.
-                            </p>
-
+                            <p>Após a aprovação do pagamento, siga as instruções da página de confirmação para iniciar o atendimento de ativação.</p>
                         </div>
+                    </article>
 
-                    </div>
-
-
-
-                    <div class="faq-item">
-
-                        <button class="faq-question">
-
-                            Como recebo ajuda?
-
-                            <span>+</span>
-
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Como recebo suporte?</span>
+                            <b>+</b>
                         </button>
-
                         <div class="faq-answer">
-
-                            <p>
-                                Nosso suporte é realizado pelo WhatsApp. Você pode
-                                falar diretamente com nossa equipe sempre que
-                                precisar de orientação.
-                            </p>
-
+                            <p>Depois da compra aprovada, a página de confirmação disponibiliza o canal de atendimento para orientar você.</p>
                         </div>
+                    </article>
 
-                    </div>
-
-
-
-                    <div class="faq-item">
-
-                        <button class="faq-question">
-
-                            Posso renovar depois?
-
-                            <span>+</span>
-
+                    <article class="faq-item reveal">
+                        <button class="faq-question" type="button" aria-expanded="false">
+                            <span>Posso renovar depois?</span>
+                            <b>+</b>
                         </button>
-
                         <div class="faq-answer">
-
-                            <p>
-                                Sim. Próximo ao vencimento você poderá escolher
-                                novamente o plano que preferir.
-                            </p>
-
+                            <p>Sim. Próximo ao vencimento, você poderá escolher novamente o período que preferir.</p>
                         </div>
-
-                    </div>
-
+                    </article>
                 </div>
-
             </div>
-
         </section>
-
-
-
-        <!-- =========================
-             CTA FINAL
-        ========================== -->
 
         <section class="final-cta">
+            <div class="container final-cta-box reveal">
+                <div class="cta-glow" aria-hidden="true"></div>
 
-            <div class="final-cta-glow"></div>
-
-            <div class="container final-cta-container">
-
-                <span class="section-label">
-                    PRONTO PARA COMEÇAR?
-                </span>
-
-                <h2>
-                    Seu entretenimento começa
-                    <span>agora.</span>
-                </h2>
-
-                <p>
-                    Escolha seu plano e venha fazer parte da experiência ZEUS TV.
-                </p>
-
-                <a href="#planos" class="btn-primary">
-
+                <span class="section-kicker">PRONTO PARA COMEÇAR?</span>
+                <h2>Seu próximo entretenimento começa <span class="gradient-text">agora.</span></h2>
+                <p>Escolha o plano ideal e continue para o pagamento seguro.</p>
+                <a class="btn btn-gold" href="#planos">
                     VER PLANOS
-
                     <span>→</span>
-
                 </a>
-
             </div>
-
         </section>
-
     </main>
 
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
     <footer class="footer">
-
-        <div class="container footer-container">
-
-            <div>
-
-                <a href="#inicio" class="logo footer-logo">
-
-                    <span class="logo-zeus">
-                        ZEUS
-                    </span>
-
-                    <span class="logo-tv">
-                        TV
-                    </span>
-
+        <div class="container footer-main">
+            <div class="footer-brand">
+                <a class="brand" href="#inicio">
+                    <span class="brand-word">ZEUS</span>
+                    <span class="brand-tv">TV</span>
                 </a>
-
-                <p>
-                    Entretenimento, praticidade e suporte em um só lugar.
-                </p>
-
+                <p>Entretenimento, praticidade e suporte em uma experiência premium.</p>
             </div>
 
-
-            <div class="footer-links">
-
-                <a href="#beneficios">
-                    Benefícios
-                </a>
-
-                <a href="#como-funciona">
-                    Como funciona
-                </a>
-
-                <a href="#planos">
-                    Planos
-                </a>
-
-                <a href="#duvidas">
-                    Dúvidas
-                </a>
-
+            <div class="footer-nav">
+                <a href="#beneficios">Benefícios</a>
+                <a href="#como-funciona">Como funciona</a>
+                <a href="#planos">Planos</a>
+                <a href="#faq">FAQ</a>
             </div>
-
         </div>
 
-
-        <div class="footer-bottom">
-
-            <div class="container">
-
-                <p>
-                    © 2026 ZEUS TV. Todos os direitos reservados.
-                </p>
-
-            </div>
-
+        <div class="container footer-bottom">
+            <span>© 2026 ZEUS TV. Todos os direitos reservados.</span>
+            <span class="footer-status"><i></i>Sistema online</span>
         </div>
-
     </footer>
 
     <script src="script.js"></script>

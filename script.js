@@ -1,89 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // FAQ
-    const faqItems = document.querySelectorAll(".faq-item");
-
-    faqItems.forEach(function (item) {
-        const question = item.querySelector(".faq-question");
-
-        question.addEventListener("click", function () {
-            const isActive = item.classList.contains("active");
-
-            faqItems.forEach(function (faq) {
-                faq.classList.remove("active");
-            });
-
-            if (!isActive) {
-                item.classList.add("active");
-            }
-        });
-    });
-
-
-    // CHECKOUTS
-    const checkoutLinks = {
-        mensal: "https://pay.cakto.com.br/jwyi27m_714880",
-        bimestral: "https://pay.cakto.com.br/3jxp7vp",
-        trimestral: "https://pay.cakto.com.br/b5e8edp"
-    };
-
-    const checkoutButtons = document.querySelectorAll(".checkout-link");
-
-    checkoutButtons.forEach(function (button) {
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-
-            const plan = button.getAttribute("data-plan");
-            const checkout = checkoutLinks[plan];
-
-            if (checkout) {
-                window.location.href = checkout;
-            }
-        });
-    });
-
-
-    // ANIMAÇÃO AO ROLAR
-    const animatedElements = document.querySelectorAll(
-        ".beneficio-card, .step-card, .plan-card, .testimonial-card, .faq-item"
-    );
-
-    animatedElements.forEach(function (element) {
-        element.classList.add("reveal");
-    });
-
-    const observer = new IntersectionObserver(
-        function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("reveal-visible");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-    animatedElements.forEach(function (element) {
-        observer.observe(element);
-    });
-
-
-    // HEADER AO ROLAR
     const header = document.querySelector(".header");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const mobileLinks = document.querySelectorAll(".mobile-menu a");
+
+
+    // =====================================================
+    // HEADER AO ROLAR
+    // =====================================================
 
     function updateHeader() {
+
         if (!header) {
             return;
         }
 
-        if (window.scrollY > 40) {
+        if (window.scrollY > 24) {
             header.classList.add("header-scrolled");
         } else {
             header.classList.remove("header-scrolled");
         }
+
     }
 
     window.addEventListener("scroll", updateHeader, {
@@ -93,42 +31,275 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHeader();
 
 
-    // LINKS INTERNOS
-    const internalLinks = document.querySelectorAll('a[href^="#"]');
+    // =====================================================
+    // MENU MOBILE
+    // =====================================================
+
+    if (menuToggle && mobileMenu) {
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen = mobileMenu.classList.toggle("open");
+
+            menuToggle.classList.toggle("active", isOpen);
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                String(!isOpen)
+            );
+
+            document.body.classList.toggle(
+                "menu-open",
+                isOpen
+            );
+
+        });
+
+
+        mobileLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mobileMenu.classList.remove("open");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileMenu.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                document.body.classList.remove(
+                    "menu-open"
+                );
+
+            });
+
+        });
+
+    }
+
+
+    // =====================================================
+    // FAQ
+    // =====================================================
+
+    const faqItems =
+        document.querySelectorAll(".faq-item");
+
+
+    faqItems.forEach(function (item) {
+
+        const question =
+            item.querySelector(".faq-question");
+
+        const answer =
+            item.querySelector(".faq-answer");
+
+
+        if (!question || !answer) {
+            return;
+        }
+
+
+        question.addEventListener("click", function () {
+
+            const wasActive =
+                item.classList.contains("active");
+
+
+            faqItems.forEach(function (otherItem) {
+
+                const otherQuestion =
+                    otherItem.querySelector(
+                        ".faq-question"
+                    );
+
+                const otherAnswer =
+                    otherItem.querySelector(
+                        ".faq-answer"
+                    );
+
+
+                otherItem.classList.remove("active");
+
+
+                if (otherQuestion) {
+
+                    otherQuestion.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+
+                if (otherAnswer) {
+
+                    otherAnswer.style.maxHeight = null;
+
+                }
+
+            });
+
+
+            if (!wasActive) {
+
+                item.classList.add("active");
+
+                question.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+
+                answer.style.maxHeight =
+                    answer.scrollHeight + "px";
+
+            }
+
+        });
+
+    });
+
+
+    // =====================================================
+    // ANIMAÇÕES AO ROLAR
+    // =====================================================
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer =
+            new IntersectionObserver(
+
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "reveal-visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12,
+                    rootMargin:
+                        "0px 0px -30px 0px"
+                }
+
+            );
+
+
+        revealElements.forEach(
+            function (element, index) {
+
+                element.style.transitionDelay =
+                    Math.min(index % 4, 3) *
+                        55 +
+                    "ms";
+
+                observer.observe(element);
+
+            }
+        );
+
+    } else {
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add(
+                "reveal-visible"
+            );
+
+        });
+
+    }
+
+
+    // =====================================================
+    // LINKS INTERNOS / SCROLL SUAVE
+    // =====================================================
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
 
     internalLinks.forEach(function (link) {
-        link.addEventListener("click", function (event) {
-            const href = link.getAttribute("href");
 
-            if (!href || href === "#") {
-                return;
+        link.addEventListener(
+            "click",
+            function (event) {
+
+                const href =
+                    link.getAttribute("href");
+
+
+                if (!href || href === "#") {
+                    return;
+                }
+
+
+                const target =
+                    document.querySelector(href);
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
+
+                const top =
+                    target
+                        .getBoundingClientRect()
+                        .top +
+                    window.pageYOffset -
+                    headerHeight -
+                    14;
+
+
+                window.scrollTo({
+                    top: top,
+                    behavior: "smooth"
+                });
+
             }
+        );
 
-            const target = document.querySelector(href);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            let headerHeight = 0;
-
-            if (header) {
-                headerHeight = header.offsetHeight;
-            }
-
-            const position =
-                target.getBoundingClientRect().top +
-                window.pageYOffset -
-                headerHeight -
-                20;
-
-            window.scrollTo({
-                top: position,
-                behavior: "smooth"
-            });
-        });
     });
 
 });
